@@ -4,11 +4,13 @@ import './index.css'
 import App from "./App.jsx"
 import Home from './Home/Home.jsx'
 import Input from './Input.jsx'
+import Assignment from './Assignment.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
 {/* <App></App> */}
-<Input/>
+{/* <Input/> */}
  {/* <Home/> */}
+ <Assignment />
      </StrictMode>,
 )
