@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
-import Button from './Button/Button';
+import Button from './Props/Button';
 
 const Assignment = () => {
     const [input1, setinput1]=useState('');
     const[input2, setinput2]=useState('');
     const [alluser, setalluser] = useState([])
- const [username, setUsername] = useState("shola")
+//  const [username, setUsername] = useState("shola")
 
-   const [product, setproduct] = useState([
-    {"name":"rice", "price":2000},
-    {"name":"bean", "price":2000},
-    {"name":"sugar", "price":2000}
-   ])
+//    const [product, setproduct] = useState([
+//     {"name":"rice", "price":2000},
+//     {"name":"bean", "price":2000},
+//     {"name":"sugar", "price":2000}
+//    ])
     
     const submitUser = () => {
         const userdetail={
@@ -51,7 +51,7 @@ const Assignment = () => {
             <Button onclick={signup} sty="btn btn-dark" text="Signup"/>
             <Button sty="btn btn-success" text="Login"/>
             <Button sty="mybutton" text="Forget password"/>
-            <h1>{username}</h1>
+            {/* <h1>{username}</h1> */}
         </div>
         {
             alluser.map((item,index)=>{

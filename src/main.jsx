@@ -6,13 +6,15 @@ import Home from './Home/Home.jsx'
 import Input from './Input.jsx'
 import Assignment from './Assignment.jsx'
 import Revision from './Revision.jsx'
+import Addinfo from './Addinfo.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
 {/* <App></App> */}
 {/* <Input/> */}
  {/* <Home/> */}
- <Assignment />
- <Revision/>
+ {/* <Assignment />
+ <Revision/> */}
+ <Addinfo/>
      </StrictMode>,
 )
