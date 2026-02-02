@@ -8,6 +8,9 @@ const Addinfo = () => {
     const [user, setuser] = useState([])
     const [count , setcount] = useState(0) 
     const [calculation , setcalculations] = useState(1) 
+    const [posts, setPosts] = useState([])
+    const [isloading, setIsloading]  = useState(false)
+
     const Handleregister = () =>{
         setcount(count +1)
         setuser([...user, firstname])
@@ -15,10 +18,18 @@ const Addinfo = () => {
         setfirstname("")
     }
     useEffect(()=>{
+        setIsloading(true)
         fetch("https://dummyjson.com/posts")
         .then((data)=> data.json())
-        .then((res)=> console.log(res))
-    })
+        .then((res)=> {
+          setIsloading(false)
+          setPosts(res.posts)
+        }).catch((err)=>{
+          setIsloading(false)
+          console.log(err);
+          
+        })
+    },[])
 
     useEffect(()=>{
         // setcalculations(count * 2)
@@ -42,6 +53,17 @@ const Addinfo = () => {
         <Input value={firstname} className="form-control mt-3" onChange={(e)=> setfirstname(e.target.value)} type="text" placeholder="Firstname"/>
         <Button onclick={Handleregister}  text="Register"/>
         <Displuser alluser={user}/>
+
+        {isloading ? <p>Loading...</p> :
+          posts.map((post)=>{
+            return(
+              <>
+              <h3>{post.title}</h3>
+              <p>{post.body}</p>
+              </>
+            )
+          })
+        }
     </div>
   )
 }

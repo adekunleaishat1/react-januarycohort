@@ -15,6 +15,7 @@ createRoot(document.getElementById('root')).render(
  {/* <Home/> */}
  {/* <Assignment />
  <Revision/> */}
- <Addinfo/>
+ {/* <Addinfo/> */}
+ <App/>
      </StrictMode>,
 )
