@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Http = ({allpost}) => {
+const Http = ({allpost, loading}) => {
   return (
     <div>
-       {allpost.map((post)=>{
+       {loading ? <p>Loading...</p> :
+       allpost.map((post)=>{
             return(
               <>
               <h3>{post.title}</h3>

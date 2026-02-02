@@ -3,6 +3,7 @@ import axios from "axios";
 import Http from "./Http";
 
 const App = () => {
+  const [isloading, setisloading] = useState(false)
   // const [user , setuser] = useState("Olaide")
   // const [oneuser , setoneser] = useState( {
   //   name: "Alice",
@@ -30,10 +31,13 @@ const App = () => {
 
     const Fetchallpost = async() =>{
     try {
+      setisloading(true)
       const allpost = await axios.get("https://dummyjson.com/posts")
       console.log(allpost);
+      setisloading(false)
       setallpost(allpost.data.posts)
     } catch (error) {
+      setisloading(false)
       console.log(error);
       
     }
@@ -56,7 +60,7 @@ const App = () => {
   // }
   return (
     <div>
-      <Http allpost={allpost}/>
+      <Http loading={isloading} allpost={allpost}/>
        {/* <h1>{user}</h1>
        <p>{oneuser.name}</p>
        <p>{oneuser.age}</p>
