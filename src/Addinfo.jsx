@@ -2,6 +2,7 @@ import React ,{useState, useEffect}from 'react'
 import Input from './Props/Input'
 import Button from './Props/Button'
 import Displuser from './Displuser'
+import axios from 'axios'
 
 const Addinfo = () => {
     const [firstname, setfirstname] = useState("")

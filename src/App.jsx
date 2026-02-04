@@ -1,32 +1,17 @@
 import { useState,useEffect } from "react";
 import axios from "axios";
 import Http from "./Http";
+import { Route, Routes } from "react-router-dom";
+import Home from "./Home/Home";
+import Assignment from "./Assignment";
+import Notfound from "./Notfound";
+import Navbar from "./Navbar";
+import Parentroute from "./Parentroute";
+import Profile from "./Profile";
+import Revision from "./Revision";
 
 const App = () => {
   const [isloading, setisloading] = useState(false)
-  // const [user , setuser] = useState("Olaide")
-  // const [oneuser , setoneser] = useState( {
-  //   name: "Alice",
-  //   age: 30,
-  //   class : "React"
-  // })
-  // const [alluser , setalluser] = useState([
-  //   {
-  //   name: "Alice",
-  //   age: 30,
-  //   class : "React"
-  // },
-  // {
-  //   name: "Bola",
-  //   age: 30,
-  //   class : "React"
-  // },
-  // {
-  //   name: "Demian",
-  //   age: 30,
-  //   class : "Node"
-  // }
-  // ])
    const [allpost , setallpost] = useState([])
 
     const Fetchallpost = async() =>{
@@ -52,52 +37,22 @@ const App = () => {
 
 
  
-  // const click = () =>{
-  //   alert("The button has been clicked");
-  //   setuser("Lolade")
-   
-    
-  // }
+
   return (
     <div>
-      <Http loading={isloading} allpost={allpost}/>
-       {/* <h1>{user}</h1>
-       <p>{oneuser.name}</p>
-       <p>{oneuser.age}</p>
-       <p>{oneuser.class}</p>
-       <h1>{alluser[2].name}</h1>
-       <h1>{alluser[2].class}</h1>
-       <button onClick={click}>Click</button> */}
-{/* 
-        <table>
-          <thead>
-           <tr>
-             <th>S/N</th>
-            <th>Name</th>
-            <th>Class</th>
-            <th>Age</th>
-           </tr>
-          </thead>
-          <tbody>
-            {alluser.map((user)=>(
-              <tr>
-                <td>{user.name}</td>
-                <td>{user.class}</td>
-                <td>{user.age}</td>
-              </tr>
-           ))}
-          </tbody>
-        </table> */}
-
-         {/* {alluser.map((user)=>(
-              <div>
-                <p>{user.name}</p>
-                <p>{user.class}</p>
-                <p>{user.age}</p>
-              </div>
-           ))} */}
-
-       
+      {/* <Navbar/> */}
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="*" element={<Notfound/>} />
+        <Route path="/http" element={<Http loading={isloading} allpost={allpost}/>}/>
+        <Route path="/home" element={<Assignment/>}/>
+        <Route path="/parent" element={<Parentroute/>} >
+          <Route path="/parent/profile" element={<Profile/>}/>
+          <Route path="/parent/resources" element={<Revision/>}/>
+        </Route>
+      </Routes>
+      {/* <Http loading={isloading} allpost={allpost}/> */}
+     
     </div>
   )
 }
