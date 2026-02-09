@@ -9,10 +9,12 @@ import Navbar from "./Navbar";
 import Parentroute from "./Parentroute";
 import Profile from "./Profile";
 import Revision from "./Revision";
+import Music from "./Music";
 
 const App = () => {
   const [isloading, setisloading] = useState(false)
    const [allpost , setallpost] = useState([])
+   const [allmusic , setallmusic] = useState([])
 
     const Fetchallpost = async() =>{
     try {
@@ -28,9 +30,21 @@ const App = () => {
     }
 
   }
-
+  
+  const Fetchallmusic =  () =>{
+     axios.get("https://robo-music-api.onrender.com/music/my-api")
+     .then((res)=>{
+      console.log(res);
+      setallmusic(res.data)
+      
+     }).catch((err)=>{
+      console.log(err);
+      
+     })
+  }
   useEffect(() => {
     Fetchallpost()
+    Fetchallmusic()
   }, [])
   
 
@@ -46,6 +60,7 @@ const App = () => {
         <Route path="*" element={<Notfound/>} />
         <Route path="/http" element={<Http loading={isloading} allpost={allpost}/>}/>
         <Route path="/home" element={<Assignment/>}/>
+        <Route path="/music" element={<Music allmusic={allmusic}/>}/>
         <Route path="/parent" element={<Parentroute/>} >
           <Route path="/parent/profile" element={<Profile/>}/>
           <Route path="/parent/resources" element={<Revision/>}/>
