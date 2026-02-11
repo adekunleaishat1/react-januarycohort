@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Card = ({SongTitle, Songimg, Artistname,playbutton, musicsource,onclick}) => {
+const Card = ({SongTitle, Songimg, Artistname,playbutton, musicsource,onclick, link}) => {
   return (
     <div style={{width:"200px", height:"300px", paddingInline:"10px" , paddingBlock:"20px", backgroundColor:"black", borderRadius:"10px"}}>
-        <audio src={musicsource}></audio>
+      <Link to={link}>
+            <audio src={musicsource}></audio>
        <div style={{width:"100%", height:"150px", backgroundColor:"red"}}>
          <img style={{width:"100%", height:"100%" }} src={Songimg} alt="" />
        </div>
@@ -12,6 +14,7 @@ const Card = ({SongTitle, Songimg, Artistname,playbutton, musicsource,onclick}) 
        <p style={{marginTop:"5px",color:"white"}}>{Artistname}</p>
        <button onClick={onclick} style={{border:"none", }}>{playbutton}</button>
       </div>
+      </Link>
     </div>
   )
 }

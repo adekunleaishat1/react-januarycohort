@@ -10,6 +10,7 @@ import Parentroute from "./Parentroute";
 import Profile from "./Profile";
 import Revision from "./Revision";
 import Music from "./Music";
+import Onemusic from "./Onemusic";
 
 const App = () => {
   const [isloading, setisloading] = useState(false)
@@ -61,6 +62,7 @@ const App = () => {
         <Route path="/http" element={<Http loading={isloading} allpost={allpost}/>}/>
         <Route path="/home" element={<Assignment/>}/>
         <Route path="/music" element={<Music allmusic={allmusic}/>}/>
+        <Route path="/one/:id" element={<Onemusic allmusic={allmusic}/>}/>
         <Route path="/parent" element={<Parentroute/>} >
           <Route path="/parent/profile" element={<Profile/>}/>
           <Route path="/parent/resources" element={<Revision/>}/>

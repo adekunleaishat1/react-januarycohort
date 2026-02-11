@@ -10,9 +10,10 @@ const Music = ({allmusic}) => {
     const playmusic = (id) =>{
       const currentmusic =  allmusic.find((music)=> music.id == id )
          const audio = audioref.current
-    // console.log(currentmusic);
- 
-    //  console.log(id);
+        // console.log(currentmusic);
+        // console.log(audio);
+        //    console.log(id);
+   
       
       // Check if it's the same song or a different one
       if (currentSongId === id) {
@@ -27,7 +28,7 @@ const Music = ({allmusic}) => {
         setCurrentSongId(id)
       }
       
-      console.log(audio);
+    
       
     }
   return (
@@ -36,7 +37,7 @@ const Music = ({allmusic}) => {
        <div style={{width:"100%", height:"100%", display:'flex', justifyContent:"space-between", alignItems:"center", flexWrap:"wrap",gap:"10px", padding:"10px"}}>
          {allmusic && allmusic.map((music)=>(
             <>
-            <Card onclick={()=>playmusic(music.id)} musicsource={music.songUrl} Songimg={music.songImage} SongTitle={music.SongTitle} Artistname={music.artistName} playbutton={<FaCirclePlay color='white'/>}/>
+            <Card link={`/one/${music.id}`} onclick={()=>playmusic(music.id)} musicsource={music.songUrl} Songimg={music.songImage} SongTitle={music.SongTitle} Artistname={music.artistName} playbutton={<FaCirclePlay color='white'/>}/>
             </>
         ))
 
