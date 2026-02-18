@@ -12,6 +12,7 @@ import Revision from "./Revision";
 import Music from "./Music";
 import Onemusic from "./Onemusic";
 import Formik from "./Formik";
+import FormikLogin from "./FormikLogin";
 
 const App = () => {
   const [isloading, setisloading] = useState(false)
@@ -63,6 +64,7 @@ const App = () => {
         <Route path="/http" element={<Http loading={isloading} allpost={allpost}/>}/>
         <Route path="/home" element={<Assignment/>}/>
         <Route path="/formik" element={<Formik/>}/>
+        <Route path="/formiklogin" element={<FormikLogin/>}/>
         <Route path="/music" element={<Music allmusic={allmusic}/>}/>
         <Route path="/one/:id" element={<Onemusic allmusic={allmusic}/>}/>
         <Route path="/parent" element={<Parentroute/>} >

@@ -17,6 +17,43 @@
       "username": "Shola",
       "email": "shola@gmail.com",
       "password": "Sholade@1"
+    },
+    {
+      "id": "987a",
+      "username": "Ayo",
+      "email": "ayo@gmail.com",
+      "password": "Ayomide@66"
+    },
+    {
+      "id": "2ece",
+      "username": "Ayo",
+      "email": "ayo@gmail.com",
+      "password": "Ayomide@66"
+    },
+    {
+      "id": "e950",
+      "username": "Tolani",
+      "email": "aa@gmail.com",
+      "password": "Resha@2222"
+    },
+    {
+      "id": "cd6d",
+      "username": "dev_yeesha",
+      "email": "aa@gmail.com",
+      "password": "Seesha@44"
+    },
+    {
+      "id": "c582",
+      "username": "dev_yeesha",
+      "email": "aaa@gmail.com",
+      "password": "Bolade@22"
+    },
+    {
+      "id": "b5c7",
+      "username": "dev_yeesha",
+      "email": "aishatadekunle8772@gmail.com",
+      "password": "Ayomide@22"
     }
-  ]
+  ],
+  "todo":[]
 }
