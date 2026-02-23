@@ -2,8 +2,10 @@ import React from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const FormikLogin = () => {
+    const navigate = useNavigate()
     const [pageError, setpageError] = useState("")
     const [success, setsuccess] = useState("")
 
@@ -28,6 +30,8 @@ const FormikLogin = () => {
             setpageError("User does not exist")
         } else{
            setsuccess("Login successful") 
+           localStorage.setItem("cur-user", founduser.id )
+           navigate("/todo")
         }}
     })
     console.log(formik.errors);

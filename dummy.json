@@ -55,5 +55,12 @@
       "password": "Ayomide@22"
     }
   ],
-  "todo":[]
+  "todo": [
+    {
+      "id": "d9a4",
+      "title": "work",
+      "description": "I will go to work on monday.",
+      "user": "b703"
+    }
+  ]
 }

@@ -13,6 +13,8 @@ import Music from "./Music";
 import Onemusic from "./Onemusic";
 import Formik from "./Formik";
 import FormikLogin from "./FormikLogin";
+import Counter from "./Counter";
+import Todo from "./Todo";
 
 const App = () => {
   const [isloading, setisloading] = useState(false)
@@ -66,6 +68,8 @@ const App = () => {
         <Route path="/formik" element={<Formik/>}/>
         <Route path="/formiklogin" element={<FormikLogin/>}/>
         <Route path="/music" element={<Music allmusic={allmusic}/>}/>
+        <Route path="/count" element={<Counter/>}/>
+        <Route path="/todo" element={<Todo/>}/>
         <Route path="/one/:id" element={<Onemusic allmusic={allmusic}/>}/>
         <Route path="/parent" element={<Parentroute/>} >
           <Route path="/parent/profile" element={<Profile/>}/>
