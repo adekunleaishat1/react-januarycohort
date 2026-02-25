@@ -1,11 +1,21 @@
 
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchalltodo } from './redux/todoSlice';
 
 const Todo = () => {
     const cur_user = localStorage.getItem("cur-user")
     console.log(cur_user);
-    
+    const {Todo, loading} = useSelector((state)=> state.todoslice)
+    console.log(Todo);
+    const dispatch = useDispatch()
+
+   useEffect(() => {
+     dispatch(fetchalltodo())
+   }, [])
+   
+
     const [todoinfo, setTodoinfo] = useState({
         title:"",
         description:""

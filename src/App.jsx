@@ -15,6 +15,7 @@ import Formik from "./Formik";
 import FormikLogin from "./FormikLogin";
 import Counter from "./Counter";
 import Todo from "./Todo";
+import ProtectedRoute from "./ProtectedRoute";
 
 const App = () => {
   const [isloading, setisloading] = useState(false)
@@ -63,10 +64,11 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="*" element={<Notfound/>} />
-        <Route path="/http" element={<Http loading={isloading} allpost={allpost}/>}/>
-        <Route path="/home" element={<Assignment/>}/>
         <Route path="/formik" element={<Formik/>}/>
         <Route path="/formiklogin" element={<FormikLogin/>}/>
+        <Route element={<ProtectedRoute/>}>
+        <Route path="/http" element={<Http loading={isloading} allpost={allpost}/>}/>
+        <Route path="/home" element={<Assignment/>}/>
         <Route path="/music" element={<Music allmusic={allmusic}/>}/>
         <Route path="/count" element={<Counter/>}/>
         <Route path="/todo" element={<Todo/>}/>
@@ -74,6 +76,7 @@ const App = () => {
         <Route path="/parent" element={<Parentroute/>} >
           <Route path="/parent/profile" element={<Profile/>}/>
           <Route path="/parent/resources" element={<Revision/>}/>
+        </Route>
         </Route>
       </Routes>
       {/* <Http loading={isloading} allpost={allpost}/> */}

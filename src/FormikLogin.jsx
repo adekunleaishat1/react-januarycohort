@@ -26,6 +26,8 @@ const FormikLogin = () => {
          setpageError("")
          setsuccess("")
         const founduser = realuser.find((user)=> user.email === value.email && user.password === value.password)
+        console.log(founduser);
+        
         if (!founduser) {
             setpageError("User does not exist")
         } else{
